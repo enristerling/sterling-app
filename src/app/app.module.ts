@@ -6,12 +6,14 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AlertModule } from 'ngx-bootstrap';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    PokemonComponent
   ],
   imports: [
     AlertModule.forRoot(),
