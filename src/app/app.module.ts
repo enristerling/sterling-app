@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
@@ -12,13 +13,13 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
-    PokemonComponent
+    routingComponents
   ],
   imports: [
     AlertModule.forRoot(),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
