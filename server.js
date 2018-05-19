@@ -10,7 +10,8 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 
 //app.use(express.static("public"));
-app.use(express.static('dist'));
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -25,11 +26,6 @@ var starwarsRoutes = require("./server/routes/starwars.js");
 
 app.use('/pokemon', pokemonRoutes);
 app.use('/starwars', starwarsRoutes);
-
-// root route
-app.get('/*', function (req, res) {
-    res.sendFile('dist/index.html', {"root": __dirname});
-});
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
